@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trang tin tức Dân Trí Demo</title>
   <link rel="stylesheet" href="css/style.css">
+  <!-- FontAwesome Icons cho Mạng xã hội -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -31,12 +33,18 @@
     <div class="footer-container">
       <div class="footer-col">
         <h3>Về Chúng Tôi</h3>
-        <p>Trang tin tức tổng hợp tự động cập nhật từ Dân trí.</p>
+        <p>Trang tin tức tổng hợp tự động cập nhật nhanh chóng, chính xác từ Báo Dân trí.</p>
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://tiktok.com" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
       </div>
       <div class="footer-col">
         <h3>Liên Kết Nhanh</h3>
         <ul>
           <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="#" onclick="filterCategory('Mới nhất')">Tin mới nhất</a></li>
           <li><a href="crawler.html">Crawl tin tức</a></li>
         </ul>
       </div>
@@ -46,10 +54,11 @@
       </div>
       <div class="footer-col">
         <h3>Liên Hệ</h3>
-        <p>Email: contact@dantridemo.vn</p>
+        <p><i class="fas fa-envelope"></i> Email: contact@dantridemo.vn</p>
+        <p><i class="fas fa-map-marker-alt"></i> Địa chỉ: Số 2 Giảng Võ, Cát Linh, Đống Đa, Hà Nội</p>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 DanTri Replica Project.</div>
+    <div class="footer-bottom">&copy; 2026 DanTri Replica Project. All rights reserved.</div>
   </footer>
 
   <script src="js/app.js"></script>
