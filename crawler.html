@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Công cụ Crawler Dân Trí</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .crawler-box { background: #fff; padding: 25px; border-radius: 8px; }
+    .input-group { display: flex; gap: 10px; margin-top: 15px; }
+    .input-group input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+    .btn { background: var(--primary-color); color: #fff; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; font-weight: bold; }
+    pre { background: #1e1e1e; color: #00ff66; padding: 15px; border-radius: 6px; overflow-x: auto; margin-top: 15px; max-height: 400px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">DÂN TRÍ REPLICA</a>
+      <a href="index.html" style="color: #333; text-decoration: none; font-weight: bold;">🏠 Về Trang Chủ</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="crawler-box">
+      <h2>Thu thập dữ liệu bài viết Dân Trí</h2>
+      <p>Nhập URL bài viết từ website dantri.com.vn:</p>
+      <div class="input-group">
+        <input type="text" id="crawl-url" placeholder="Nhập link bài viết Dân Trí tại đây...">
+        <button class="btn" onclick="handleCrawl()">Bắt đầu Crawl</button>
+      </div>
+
+      <div id="status" style="margin-top: 15px; font-weight: bold;"></div>
+      <pre id="json-result">// Kết quả JSON sẽ hiển thị tại đây...</pre>
+      <button class="btn" id="save-btn" style="display: none; margin-top: 15px;" onclick="saveToLocalStorage()">Lưu vào LocalStorage</button>
+    </div>
+  </main>
+
+  <script src="js/crawler.js"></script>
+  <script>
+    let currentCrawledData = null;
+
+    async function handleCrawl() {
+      const url = document.getElementById('crawl-url').value.trim();
+      const status = document.getElementById('status');
+      const resultBox = document.getElementById('json-result');
+      const saveBtn = document.getElementById('save-btn');
+
+      if (!url) { alert('Vui lòng nhập URL!'); return; }
+
+      status.innerText = '⏳ Đang cào dữ liệu...';
+      try {
+        currentCrawledData = await crawlDantriArticle(url);
+        resultBox.innerText = JSON.stringify(currentCrawledData, null, 2);
+        status.innerText = '✅ Cào dữ liệu thành công!';
+        saveBtn.style.display = 'inline-block';
+      } catch (err) {
+        status.innerText = '❌ Lỗi cào dữ liệu.';
+      }
+    }
+
+    function saveToLocalStorage() {
+      if (!currentCrawledData) return;
+      let articles = JSON.parse(localStorage.getItem('articles')) || [];
+      const index = articles.findIndex(a => a.id === currentCrawledData.id);
+      if (index !== -1) articles[index] = currentCrawledData;
+      else articles.unshift(currentCrawledData);
+
+      localStorage.setItem('articles', JSON.stringify(articles));
+      alert('Đã lưu bài viết vào LocalStorage!');
+    }
+  </script>
+</body>
+</html>
