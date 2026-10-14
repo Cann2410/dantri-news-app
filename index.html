@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang tin tức Dân Trí Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">DÂN TRÍ REPLICA</a>
+      <a href="crawler.html" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">⚙️ Công cụ Crawler</a>
+    </div>
+    <nav>
+      <ul class="navbar" id="navbar"></ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div id="news-view">
+      <div class="top-section" id="top-section"></div>
+      <h2 class="section-title">Danh sách bài viết</h2>
+      <div class="post-list" id="remaining-posts"></div>
+    </div>
+    <div id="detail-view" style="display: none;"></div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Về Chúng Tôi</h3>
+        <p>Trang tin tức tổng hợp tự động cập nhật từ Dân trí.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Liên Kết Nhanh</h3>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="crawler.html">Crawl tin tức</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Chuyên Mục</h3>
+        <ul id="footer-categories"></ul>
+      </div>
+      <div class="footer-col">
+        <h3>Liên Hệ</h3>
+        <p>Email: contact@dantridemo.vn</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 DanTri Replica Project.</div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
