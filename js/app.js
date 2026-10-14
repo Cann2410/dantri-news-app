@@ -1,3 +1,6 @@
+
+const DATA_VERSION = 'v2_40_full_posts';
+
 document.addEventListener('DOMContentLoaded', async () => {
   await initArticlesData();
   await loadCategories();
@@ -5,17 +8,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function initArticlesData() {
-  const existingArticles = localStorage.getItem('articles');
-  // Nếu chưa có dữ liệu hoặc dữ liệu cũ quá ít (< 10 bài), nạp lại bộ dữ liệu chuẩn 40 bài
-  if (!existingArticles || JSON.parse(existingArticles).length < 10) {
+  const currentVersion = localStorage.getItem('data_version');
+  
+  // Nếu chưa có version mới này, tự động đè lại 40 bài từ initial-news.json
+  if (currentVersion !== DATA_VERSION) {
     try {
-      const res = await fetch('js/initial-news.json');
+      // Thêm ?v=Date.now() để chống GitHub lưu Cache file cũ
+      const res = await fetch('js/initial-news.json?v=' + Date.now());
       if (res.ok) {
         const initialArticles = await res.json();
         localStorage.setItem('articles', JSON.stringify(initialArticles));
+        localStorage.setItem('data_version', DATA_VERSION);
+        console.log('✅ Đã tự động nạp thành công 40 bài viết mới!');
+      } else {
+        console.error('❌ Không tìm thấy file js/initial-news.json!');
       }
     } catch (e) {
-      console.warn('Không thể tải initial-news.json:', e);
+      console.warn('Lỗi khi nạp initial-news.json:', e);
     }
   }
 }
@@ -26,7 +35,7 @@ function getArticles() {
 
 async function loadCategories() {
   try {
-    const res = await fetch('js/categories.json');
+    const res = await fetch('js/categories.json?v=' + Date.now());
     const data = await res.json();
     renderNavbar(data.menu);
     renderFooterCategories(data.menu);
