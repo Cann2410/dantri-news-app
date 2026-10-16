@@ -1,18 +1,50 @@
+
 {
   "menu": [
-    { "id": "home", "title": "Trang chủ", "url": "https://dantri.com.vn/", "type": "home" },
-    { "id": "dt360", "title": "Dân trí 360", "url": "https://dantri.com.vn/dt360.htm", "type": "external" },
-    { "id": "latest", "title": "Mới nhất", "url": "https://dantri.com.vn/tin-moi-nhat.htm", "type": "category" },
+    {
+      "id": "home",
+      "title": "Trang chủ",
+      "url": "https://dantri.com.vn/",
+      "type": "home"
+    },
+    {
+      "id": "dt360",
+      "title": "Dân trí 360",
+      "url": "https://dantri.com.vn/dt360.htm",
+      "type": "external"
+    },
+    {
+      "id": "latest",
+      "title": "Mới nhất",
+      "url": "https://dantri.com.vn/tin-moi-nhat.htm",
+      "type": "category"
+    },
     {
       "id": "the-gioi",
       "title": "Thế giới",
       "url": "https://dantri.com.vn/the-gioi.htm",
       "type": "category",
       "children": [
-        { "id": "quan-su", "title": "Quân sự", "url": "https://dantri.com.vn/the-gioi/quan-su.htm" },
-        { "id": "phan-tich", "title": "Phân tích - Bình luận", "url": "https://dantri.com.vn/the-gioi/phan-tich-binh-luan.htm" },
-        { "id": "the-gioi-do-day", "title": "Thế giới đó đây", "url": "https://dantri.com.vn/the-gioi/the-gioi-do-day.htm" },
-        { "id": "kieu-bao", "title": "Kiều bào", "url": "https://dantri.com.vn/the-gioi/kieu-bao.htm" }
+        {
+          "id": "quan-su",
+          "title": "Quân sự",
+          "url": "https://dantri.com.vn/the-gioi/quan-su.htm"
+        },
+        {
+          "id": "phan-tich",
+          "title": "Phân tích - Bình luận",
+          "url": "https://dantri.com.vn/the-gioi/phan-tich-binh-luan.htm"
+        },
+        {
+          "id": "the-gioi-do-day",
+          "title": "Thế giới đó đây",
+          "url": "https://dantri.com.vn/the-gioi/the-gioi-do-day.htm"
+        },
+        {
+          "id": "kieu-bao",
+          "title": "Kiều bào",
+          "url": "https://dantri.com.vn/the-gioi/kieu-bao.htm"
+        }
       ]
     },
     {
@@ -21,12 +53,112 @@
       "url": "https://dantri.com.vn/thoi-su.htm",
       "type": "category",
       "children": [
-        { "id": "chinh-tri", "title": "Chính trị", "url": "https://dantri.com.vn/thoi-su/chinh-tri.htm" },
-        { "id": "giao-thong", "title": "Giao thông", "url": "https://dantri.com.vn/thoi-su/giao-thong.htm" },
-        { "id": "moi-truong", "title": "Môi trường", "url": "https://dantri.com.vn/thoi-su/moi-truong.htm" },
-        { "id": "nong-tren-mang", "title": "Nóng trên mạng", "url": "https://dantri.com.vn/thoi-su/nong-tren-mang.htm" }
+        {
+          "id": "chinh-tri",
+          "title": "Chính trị",
+          "url": "https://dantri.com.vn/thoi-su/chinh-tri.htm"
+        },
+        {
+          "id": "giao-thong",
+          "title": "Giao thông",
+          "url": "https://dantri.com.vn/thoi-su/giao-thong.htm"
+        },
+        {
+          "id": "moi-truong",
+          "title": "Môi trường",
+          "url": "https://dantri.com.vn/thoi-su/moi-truong.htm"
+        },
+        {
+          "id": "nong-tren-mang",
+          "title": "Nóng trên mạng",
+          "url": "https://dantri.com.vn/thoi-su/nong-tren-mang.htm"
+        }
       ]
     },
-    { "id": "bat-dong-san", "title": "Bất động sản", "url": "https://dantri.com.vn/bat-dong-san.htm", "type": "category" }
+    {
+      "id": "kinh-doanh",
+      "title": "Kinh doanh",
+      "url": "https://dantri.com.vn/kinh-doanh.htm",
+      "type": "category",
+      "children": [
+        {
+          "id": "tai-chinh",
+          "title": "Tài chính",
+          "url": "https://dantri.com.vn/kinh-doanh/tai-chinh.htm"
+        },
+        {
+          "id": "doanh-nghiep",
+          "title": "Doanh nghiệp",
+          "url": "https://dantri.com.vn/kinh-doanh/doanh-nghiep.htm"
+        },
+        {
+          "id": "thi-truong",
+          "title": "Thị trường",
+          "url": "https://dantri.com.vn/kinh-doanh/thi-truong.htm"
+        }
+      ]
+    },
+    {
+      "id": "bat-dong-san",
+      "title": "Bất động sản",
+      "url": "https://dantri.com.vn/bat-dong-san.htm",
+      "type": "category"
+    },
+    {
+      "id": "the-thao",
+      "title": "Thể thao",
+      "url": "https://dantri.com.vn/the-thao.htm",
+      "type": "category",
+      "children": [
+        {
+          "id": "bong-da",
+          "title": "Bóng đá",
+          "url": "https://dantri.com.vn/the-thao/bong-da.htm"
+        }
+      ]
+    },
+    {
+      "id": "giai-tri",
+      "title": "Giải trí",
+      "url": "https://dantri.com.vn/giai-tri.htm",
+      "type": "category"
+    },
+    {
+      "id": "suc-khoe",
+      "title": "Sức khỏe",
+      "url": "https://dantri.com.vn/suc-khoe.htm",
+      "type": "category"
+    },
+    {
+      "id": "giao-duc",
+      "title": "Giáo dục",
+      "url": "https://dantri.com.vn/giao-duc.htm",
+      "type": "category"
+    },
+    {
+      "id": "cong-nghe",
+      "title": "Công nghệ",
+      "url": "https://dantri.com.vn/cong-nghe.htm",
+      "type": "category"
+    },
+    {
+      "id": "du-lich",
+      "title": "Du lịch",
+      "url": "https://dantri.com.vn/du-lich.htm",
+      "type": "category"
+    },
+    {
+      "id": "doi-song",
+      "title": "Đời sống",
+      "url": "https://dantri.com.vn/doi-song.htm",
+      "type": "category"
+    },
+    {
+      "id": "phap-luat",
+      "title": "Pháp luật",
+      "url": "https://dantri.com.vn/phap-luat.htm",
+      "type": "category"
+    }
   ]
 }
+
